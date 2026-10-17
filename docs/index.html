@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Response Strategies for Sudden Residential Slab Leaks | SWFL Builder & Renovator</title>
+    <meta name="description" content="A comprehensive structural engineering report on diagnosing sub-slab plumbing leaks, non-destructive acoustic detection, thermal imaging mapping, and foundation preservation in Southwest Florida homes.">
+    
+    <!-- SVG Favicon (Unique Electric Indigo & Bright Crimson Geometry) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0d18'/><path d='M6 24 L16 4 L26 24 Z' fill='none' stroke='%236366f1' stroke-width='3'/><path d='M12 24 L16 14 L20 24 Z' fill='%23f43f5e'/><circle cx='16' cy='10' r='2.5' fill='%2310b981'/></svg>">
+
+    <!-- Fonts: Space Grotesk (Headings), Instrument Sans (Body), JetBrains Mono (Tech Accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Bespoke Palette: Cyber Obsidian, Electric Indigo, Crimson Flare, Emerald Signal & Warm Concrete Light */
+            --bg-void: #070913;
+            --bg-surface: #0e1222;
+            --bg-card: rgba(18, 24, 43, 0.85);
+            --bg-card-hover: rgba(28, 36, 62, 0.95);
+            --accent-indigo: #6366f1;
+            --accent-crimson: #f43f5e;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --text-title: #ffffff;
+            --text-body: #94a3b8;
+            --text-bright: #f1f5f9;
+            --border-indigo: rgba(99, 102, 241, 0.32);
+            --border-crimson: rgba(244, 63, 94, 0.32);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --font-head: 'Space Grotesk', sans-serif;
+            --font-body: 'Instrument Sans', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            --max-w: 1380px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-void);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 88% 8%, rgba(99, 102, 241, 0.09) 0%, transparent 48%),
+                radial-gradient(circle at 12% 52%, rgba(244, 63, 94, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 70% 92%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        a {
+            color: var(--accent-indigo);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        a:hover {
+            color: var(--accent-crimson);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            color: var(--text-title);
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1.35rem;
+            font-size: 1.05rem;
+            color: var(--text-bright);
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        /* Unique Tag / Pill */
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.45rem 1.3rem;
+            border-radius: 4px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid var(--border-indigo);
+            border-left: 4px solid var(--accent-crimson);
+            color: var(--text-title);
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto 5rem auto;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-indigo) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--text-body);
+        }
+
+        /* BESPOKE CREATIVE UI PATTERN: Hex-Cut Glass Card with Left Glow Bar */
+        .card-hex-glow {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 2.75rem;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .card-hex-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-indigo), var(--accent-crimson));
+            opacity: 0.4;
+            transition: opacity 0.4s ease, width 0.4s ease;
+        }
+
+        .card-hex-glow:hover {
+            transform: translateY(-8px) scale(1.005);
+            border-color: var(--border-indigo);
+            background: var(--bg-card-hover);
+            box-shadow: 0 30px 60px -15px rgba(99, 102, 241, 0.25);
+        }
+
+        .card-hex-glow:hover::before {
+            opacity: 1;
+            width: 6px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.1rem 2.4rem;
+            font-family: var(--font-code);
+            font-size: 0.88rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .btn-indigo {
+            background: linear-gradient(135deg, var(--accent-indigo) 0%, #4f46e5 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-indigo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+            color: #ffffff;
+        }
+
+        .btn-crimson-outline {
+            background: transparent;
+            color: var(--text-title);
+            border: 1px solid var(--border-crimson);
+        }
+
+        .btn-crimson-outline:hover {
+            border-color: var(--accent-crimson);
+            color: var(--accent-crimson);
+            background: rgba(244, 63, 94, 0.08);
+        }
+
+        /* 1. Sticky Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 0;
+            background: rgba(7, 9, 19, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            font-family: var(--font-head);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-title);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .brand-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .brand-logo span {
+            color: var(--accent-indigo);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+        }
+
+        .nav-menu a {
+            font-family: var(--font-code);
+            font-size: 0.82rem;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-indigo);
+        }
+
+        /* 2. Dynamic Hero Section */
+        .hero-section {
+            padding-top: 12.5rem;
+            padding-bottom: 8rem;
+            position: relative;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.9rem;
+            margin-bottom: 1.6rem;
+            line-height: 1.06;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-indigo) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.22rem;
+            line-height: 1.85;
+            color: var(--text-body);
+            margin-bottom: 2.75rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-img-box {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-indigo);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.85);
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 530px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -28px;
+            left: -28px;
+            background: rgba(14, 18, 34, 0.96);
+            border-left: 4px solid var(--accent-crimson);
+            border-y: 1px solid var(--border-subtle);
+            border-r: 1px solid var(--border-subtle);
+            padding: 1.5rem 2rem;
+            border-radius: 14px;
+            backdrop-filter: blur(16px);
+        }
+
+        .hero-badge h4 {
+            font-family: var(--font-code);
+            color: var(--accent-crimson);
+            font-size: 1.35rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* 3. Metrics & Stats Grid */
+        .stats-section {
+            background: var(--bg-surface);
+            border-y: 1px solid var(--border-subtle);
+            padding: 3.75rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: var(--border-subtle);
+        }
+
+        .stat-val {
+            font-family: var(--font-head);
+            font-size: 3.4rem;
+            font-weight: 700;
+            color: var(--accent-indigo);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-lbl {
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--text-body);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* 4. Editorial Mission */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .mission-text h3 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-title);
+        }
+
+        /* 5. Main Featured Article Section (SEO Content) */
+        .article-section {
+            background: var(--bg-surface);
+            padding: 8rem 0;
+        }
+
+        .article-box {
+            max-width: 980px;
+            margin: 0 auto;
+            background: var(--bg-void);
+            border-radius: 28px;
+            padding: 4.75rem;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 35px 80px rgba(0,0,0,0.65);
+        }
+
+        .article-header {
+            margin-bottom: 3.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 2.75rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.9rem;
+            line-height: 1.15;
+            margin-bottom: 1.3rem;
+            color: var(--text-title);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--accent-indigo);
+        }
+
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.92;
+            color: var(--text-bright);
+            margin-bottom: 1.9rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.7rem;
+            margin: 2.75rem 0 1.25rem 0;
+            color: var(--accent-indigo);
+        }
+
+        .seo-anchor {
+            color: var(--accent-indigo);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            transition: all 0.3s;
+        }
+
+        .seo-anchor:hover {
+            color: var(--accent-crimson);
+            text-shadow: 0 0 14px rgba(244, 63, 94, 0.45);
+        }
+
+        /* 6. Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.25rem;
+        }
+
+        .feature-icon-box {
+            width: 56px;
+            height: 56px;
+            background: rgba(99, 102, 241, 0.14);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.6rem;
+            color: var(--accent-indigo);
+            font-family: var(--font-code);
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        /* 7. Step-by-Step Architecture Guide */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+        }
+
+        .arch-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 2.2rem;
+            position: relative;
+        }
+
+        .arch-num {
+            font-family: var(--font-code);
+            font-size: 1.35rem;
+            color: var(--accent-indigo);
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+        }
+
+        /* 8. Comparison Table */
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-surface);
+        }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .comp-table th, .comp-table td {
+            padding: 1.4rem 1.75rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .comp-table th {
+            background: rgba(28, 36, 62, 0.85);
+            font-family: var(--font-code);
+            color: var(--text-title);
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comp-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* 9. FAQ Accordion */
+        .faq-accordion {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.35rem;
+        }
+
+        .faq-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-btn {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: transparent;
+            border: none;
+            color: var(--text-title);
+            font-family: var(--font-head);
+            font-size: 1.22rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-btn::after {
+            content: '+';
+            font-family: var(--font-code);
+            font-size: 1.6rem;
+            color: var(--accent-indigo);
+            transition: transform 0.3s;
+        }
+
+        .faq-card.open .faq-btn::after {
+            transform: rotate(45deg);
+            color: var(--accent-crimson);
+        }
+
+        .faq-content {
+            padding: 0 2rem 1.5rem 2rem;
+            display: none;
+            color: var(--text-body);
+            line-height: 1.75;
+        }
+
+        .faq-card.open .faq-content {
+            display: block;
+        }
+
+        /* 10. Expert Tips Cards */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.25rem;
+        }
+
+        .tip-card {
+            border-left: 4px solid var(--accent-indigo);
+        }
+
+        /* 11. Testimonials Showcase */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.25rem;
+        }
+
+        .testi-user {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .testi-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-indigo);
+        }
+
+        /* 12. Highlighted Resource Banner */
+        .resource-banner {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.16) 0%, rgba(244, 63, 94, 0.12) 100%);
+            border: 1px solid var(--border-indigo);
+            border-radius: 28px;
+            padding: 4.75rem 3.25rem;
+            text-align: center;
+        }
+
+        /* 13. Consultation Form */
+        .form-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.6rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.15rem 1.4rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            color: var(--text-title);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-indigo);
+            box-shadow: 0 0 18px rgba(99, 102, 241, 0.22);
+        }
+
+        /* 14. Comprehensive Footer */
+        .footer {
+            background: #04050d;
+            border-top: 1px solid var(--border-subtle);
+            padding: 5.5rem 0 2.75rem 0;
+            color: var(--text-body);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4.5rem;
+            margin-bottom: 4.5rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-head);
+            font-size: 1.55rem;
+            color: var(--text-title);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 2.25rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .hero-layout, .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid, .testi-grid, .arch-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-card::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.85rem;
+            }
+
+            .features-grid, .testi-grid, .arch-grid, .tips-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-box {
+                padding: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. STICKY NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="brand-logo">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#0a0d18"/>
+                    <path d="M6 24 L16 4 L26 24 Z" fill="none" stroke="#6366f1" stroke-width="3"/>
+                    <path d="M12 24 L16 14 L20 24 Z" fill="#f43f5e"/>
+                    <circle cx="16" cy="10" r="2.5" fill="#10b981"/>
+                </svg>
+                SWFL Builder & <span>Renovator</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#mission">Editorial Mission</a></li>
+                <li><a href="#article">Featured Report</a></li>
+                <li><a href="#features">Diagnostic Pillars</a></li>
+                <li><a href="#architecture">Response Protocol</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#consultation" class="btn btn-indigo" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;">Emergency Slab Advisory</a>
+        </div>
+    </header>
+
+    <!-- 2. DYNAMIC HERO SECTION -->
+    <section class="hero-section">
+        <div class="container hero-layout">
+            <div class="hero-content">
+                <span class="tech-pill">Subsurface Structural Engineering Journal</span>
+                <h1 class="hero-title">Sub-Slab Plumbing Leak Mitigation in Florida Foundations</h1>
+                <p class="hero-sub">Providing general contractors, structural engineers, and luxury residential property owners across Southwest Florida with non-destructive acoustic mapping, infrared diagnostic protocols, and foundation remediation strategies.</p>
+                <div style="display: flex; gap: 1.35rem; flex-wrap: wrap;">
+                    <a href="#article" class="btn btn-indigo">Read Full Engineering Journal</a>
+                    <a href="#architecture" class="btn btn-crimson-outline">Explore Response Blueprint</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Sub-Slab Concrete Foundation Structural Diagnostics">
+                </div>
+                <div class="hero-badge">
+                    <h4>2026 Structural Safety Protocol</h4>
+                    <p style="margin: 0; font-size: 0.88rem; color: #94a3b8;">Subsurface Hydro-Acoustic Diagnostics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. QUICK STATS & ACHIEVEMENTS GRID -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val">3,500 PSI</div>
+                    <div class="stat-lbl">Typical SWFL Concrete Slab Compressive Strength</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val">0.1 GPM</div>
+                    <div class="stat-lbl">Micro-Leak Detection Acoustic Threshold</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val">100%</div>
+                    <div class="stat-lbl">Non-Destructive Location Precision Before Trenching</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val">24-48 Hrs</div>
+                    <div class="stat-lbl">Sub-Slab Mold Colonization Window</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. EDITORIAL MISSION SECTION -->
+    <section class="section-padding" id="mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-text">
+                    <span class="tech-pill">Editorial Mission</span>
+                    <h3>Preserving Architectural Integrity Through Non-Destructive Engineering</h3>
+                    <p>At <strong>SWFL Builder & Renovator</strong>, our publication focuses on technical real estate preservation, structural slab diagnostics, and advanced MEP engineering integration across coastal Florida.</p>
+                    <p>Subtropical coastal soils, shifting sandy substrates, and high seasonal groundwater tables exert unique hydrostatic pressures on poured concrete slab-on-grade foundations. When copper or PEX supply lines buried beneath monolithic slabs develop breaches, standard visible inspections fail. We equip builders, adjusters, and homeowners with non-destructive diagnostic frameworks to resolve subsurface leaks before structural settling occurs.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Luxury Modern Residential Foundation and Architectural Design" style="width: 100%; border-radius: 20px; border: 1px solid var(--border-indigo);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MAIN FEATURED ARTICLE SECTION (SEO CONTENT) -->
+    <section class="article-section" id="article">
+        <div class="container">
+            <article class="article-box">
+                <header class="article-header">
+                    <span class="tech-pill">Special Structural Engineering Research</span>
+                    <h1>Fast Response Strategies for Sudden Residential Slab Leaks</h1>
+                    <div class="article-meta">
+                        <span>By Structural MEP Board</span> • <span>Technical Housing Journal</span> • <span>Reading Time: 9 mins</span>
+                    </div>
+                </header>
+                <div class="article-content">
+                    <p>Slab leaks occur beneath concrete foundations, making them difficult to detect until water bills spike or warm spots appear on flooring. Across Southwest Florida, residential construction overwhelmingly relies on poured concrete slab-on-grade foundations built directly over packed sand subgrades. While monolithic concrete slabs provide exceptional structural stability against coastal high-wind events, embedding pressurized domestic water lines inside or beneath 4 to 6 inches of steel-reinforced concrete creates a critical vulnerability. When a subterranean supply pipe ruptures, water escaping under continuous pressure cannot drain naturally into dense clay subsoils, forcing it horizontally along the base of the slab.</p>
+
+                    <h3>Subterranean Failure Mechanisms and Structural Degradation</h3>
+                    <p>Left unaddressed, sub-slab water flow undermines foundation stability, ruins interior flooring, and fosters hazardous indoor mold growth. In older homes constructed during earlier building cycles, copper supply lines buried directly in contact with concrete slurry suffer from galvanic corrosion and soil chemistry abrasion. Over decades, thermal expansion and contraction cycles cause metal friction against embedded rebar or crushed stone aggregate, resulting in pinhole ruptures or fitting fatigue. Continuous subsurface water displacement gradually washes away underlying supportive soil, creating hollow voids beneath the slab that can cause load-bearing concrete walls to crack or settle unevenly.</p>
+
+                    <p>According to structural engineering standards established by the <a href="https://www.asce.org/" target="_blank" rel="noopener">American Society of Civil Engineers (ASCE)</a>, uncontrolled water intrusion under foundation slabs severely degrades soil load-bearing capacity. Furthermore, saturated concrete acts as a giant sponge via capillary action, pulling moisture upward through micro-cracks into luxury hardwood, travertine, or carpet flooring. In Florida's high ambient humidity, this moisture trap sparks toxic mold colonies within 24 to 48 hours behind drywall baseboards.</p>
+
+                    <h3>Non-Destructive Acoustic Detection and Thermal Infrared Mapping</h3>
+                    <p>Utilizing non-destructive acoustic detection and thermal imaging allows technicians to pinpoint underground leaks precisely without breaking unnecessary concrete. Modern diagnostic specialists do not blindly jackhammer slab floors based on vague estimations. Instead, highly sensitive ground microphones and acoustic listening discs amplify sub-slab water escape frequencies, isolating the exact sound of high-pressure fluid turbulent flow through dense concrete layers. Simultaneously, high-resolution thermographic cameras map thermal differentials on flooring surfaces, highlighting hot-water slab leaks as bright radiant thermal plumes.</p>
+
+                    <p>Affected property owners consistently call on <a href="https://bonitaspringsplumbingguys.com/" class="seo-anchor">Emergency Plumber Bonita Springs</a> to isolate hidden slab leaks rapidly and execute precise rerouting or spot repairs. Certified diagnostic plumbers combine ultrasonic pipe locating equipment with overhead PEX manifold rerouting strategies, allowing homeowners to eliminate damaged sub-slab pipes completely without disrupting interior floor finishes.</p>
+
+                    <h3>Mitigating Structural Risk and Securing Capital Value</h3>
+                    <p>Professional leak detection mitigates structural risk and controls repair expenses. Aligning emergency response protocols with regional building safety standards outlined by the <a href="https://www.floridabuilding.org/" target="_blank" rel="noopener">Florida Building Commission</a> ensures that slab remediation efforts preserve foundational load capacities, maintain insurance coverage compliance, and safeguard overall real estate equity for long-term ownership.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 6. CORE FEATURES & KEY VALUE GRID -->
+    <section class="section-padding" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="tech-pill">Diagnostic Pillars</span>
+                <h2>6 Core Sub-Slab Remediation Pillars</h2>
+                <p>Essential engineered protocols to locate and isolate subterranean pipe breaches without destructive digging.</p>
+            </div>
+            <div class="features-grid">
+                <div class="card-hex-glow">
+                    <div class="feature-icon-box">01</div>
+                    <h3 style="margin-bottom: 0.75rem; font-family: var(--font-head); font-size: 1.3rem;">Acoustic Ground Scans</h3>
+                    <p>Deploying ultra-sensitive ground microphones to filter background noise and isolate sub-slab escaping water frequency spikes.</p>
+                </div>
+                <div class="card-hex-glow">
+                    <div class="feature-icon-box">02</div>
+                    <h3 style="margin-bottom: 0.75rem; font-family: var(--font-head); font-size: 1.3rem;">FLIR Thermal Imaging</h3>
+                    <p>Using high-resolution thermographic cameras to map radiant heat signatures under tile, hardwood, or luxury vinyl plank.</p>
+                </div>
+                <div class="card-hex-glow">
+                    <div class="feature-icon-box">03</div>
+                    <h3 style="margin-bottom: 0.75rem; font-family: var(--font-head); font-size: 1.3rem;">Overhead PEX Rerouting</h3>
+                    <p>Bypassing ruptured sub-slab lines completely by threading modern flexible PEX piping through attic space walls.</p>
+                </div>
+                <div class="card-hex-glow">
+                    <div class="feature-icon-box">04</div>
+                    <h3 style="margin-bottom: 0.75rem; font-family: var(--font-head); font-size: 1.3rem;">Void Soil Compaction Check</h3>
+                    <p>Evaluating underlying sand subgrade stability to ensure subterranean water washouts have not compromised slab support.</p>
+                </div>
+                <div class="card-hex-glow">
+                    <div class="feature-icon-box">05</div>
+                    <h3 style="margin-bottom: 0.75rem; font-family: var(--font-head); font-size: 1.3rem;">Direct Jackhammer Spot Repair</h3>
+                    <p>Precision single-tile core excavation when line access points permit localized direct sleeve repairs on damaged copper fittings.</p>
+                </div>
+                <div class="card-hex-glow">
+                    <div class="feature-icon-box">06</div>
+                    <h3 style="margin-bottom: 0.75rem; font-family: var(--font-head); font-size: 1.3rem;">System Hydro-Static Pressure Testing</h3>
+                    <p>Verifying 100% air and water tight isolation across all remaining supply manifolds prior to wall enclosure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. VISUAL BREAKDOWN / STEP-BY-STEP ARCHITECTURE GUIDE -->
+    <section class="section-padding" style="background: var(--bg-surface);" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="tech-pill">Response Protocol</span>
+                <h2>4-Step Emergency Slab Leak Protocol</h2>
+                <p>A systematic sequence executed by diagnostic engineers from initial symptom detection to final foundation stabilization.</p>
+            </div>
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <div class="arch-num">STEP 01</div>
+                    <h3 style="font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 0.6rem; color: var(--text-title);">Main Supply Isolation</h3>
+                    <p>Immediately close the property's primary water shutoff valve and attach pressure gauges to verify static pressure drop rates.</p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-num">STEP 02</div>
+                    <h3 style="font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 0.6rem; color: var(--text-title);">Non-Destructive Mapping</h3>
+                    <p>Deploy acoustic frequency sensors and thermal cameras to map the exact x/y coordinates of the subterranean rupture.</p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-num">STEP 03</div>
+                    <h3 style="font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 0.6rem; color: var(--text-title);">Engineering Strategy Selection</h3>
+                    <p>Determine whether an overhead PEX wall/attic reroute or direct core spot repair delivers optimal cost and structural protection.</p>
+                </div>
+                <div class="arch-card">
+                    <div class="arch-num">STEP 04</div>
+                    <h3 style="font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 0.6rem; color: var(--text-title);">Moisture Testing & Wall Seal</h3>
+                    <p>Conduct moisture meter scans across drywall bases and seal wall cavities to prevent secondary mold colonization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. COMPREHENSIVE COMPARISON TABLE -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="tech-pill">System Matrix</span>
+                <h2>Blind Jackhammering vs. Modern Acoustic Rerouting</h2>
+                <p>Comparing legacy invasive concrete trenching with advanced overhead PEX rerouting methodologies.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>Evaluation Parameter</th>
+                            <th>Legacy Blind Jackhammer Excavation</th>
+                            <th>Modern Acoustic Detection & PEX Reroute</th>
+                            <th>Homeowner Advantage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Interior Floor Destruction</td>
+                            <td>High (Trenches cut through luxury floors)</td>
+                            <td>Zero (Floors remain completely untouched)</td>
+                            <td><span style="color: var(--accent-indigo); font-weight: 700;">Preserves Rare Interior Finishes</span></td>
+                        </tr>
+                        <tr>
+                            <td>Structural Slab Impact</td>
+                            <td>Weakens concrete slab integrity and rebar grid</td>
+                            <td>Zero impact to monolithic concrete slab</td>
+                            <td><span style="color: var(--accent-indigo); font-weight: 700;">Maintains Foundation Load Strength</span></td>
+                        </tr>
+                        <tr>
+                            <td>Recurrent Sub-Slab Leak Risk</td>
+                            <td>High (Remaining old underground pipes still age)</td>
+                            <td>Zero (Damaged line isolated & abandoned)</td>
+                            <td><span style="color: var(--accent-indigo); font-weight: 700;">Permanently Eliminates Underground Leaks</span></td>
+                        </tr>
+                        <tr>
+                            <td>Project Execution Timeline</td>
+                            <td>5 to 8 Days (Messy concrete dust & repair)</td>
+                            <td>1 to 2 Days total turnaround time</td>
+                            <td><span style="color: var(--accent-indigo); font-weight: 700;">Minimizes Household Living Disruption</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. INTERACTIVE FAQ ACCORDION -->
+    <section class="section-padding" style="background: var(--bg-surface);" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="tech-pill">Property Inquiries</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Expert answers regarding sub-slab leak detection, insurance coverage, and structural foundation safety.</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-card">
+                    <button class="faq-btn">What are the earliest warning signs of a hidden slab leak?</button>
+                    <div class="faq-content">
+                        Early warning signs include an unexplained spike in monthly water utility bills, the sound of running water when all faucets are closed, warm spots on tile or vinyl flooring, unseasonably damp carpets, or low water pressure in specific fixtures.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-btn">Does homeowner insurance cover slab leak detection and repairs in Florida?</button>
+                    <div class="faq-content">
+                        Most standard Florida property insurance policies cover the cost of tear-out and access required to locate and repair the leak, as well as resultant water damage to drywall and flooring. Policy specifics vary, making detailed diagnostic documentation essential for claims.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-btn">Why is an overhead PEX reroute preferred over digging under the slab?</button>
+                    <div class="faq-content">
+                        An overhead PEX reroute abandons the failing pipe under the concrete entirely, running brand-new corrosion-resistant polymer lines through walls and ceiling spaces. This avoids breaking up expensive flooring, prevents mess, and guarantees that specific underground line will never leak again.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-btn">Can a slab leak cause structural foundation collapse?</button>
+                    <div class="faq-content">
+                        While total collapse is rare, continuous high-pressure water flow under a slab washes away supporting sand subgrades, creating hollow pockets. Over time, heavy furniture or load-bearing wall weight can cause concrete cracking and differential foundation settling.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. EXPERT TIPS & BEST PRACTICES CARDS -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="tech-pill">Best Practices</span>
+                <h2>Expert Advice for Foundation Preservation</h2>
+                <p>Directives from senior structural engineers and master diagnostic plumbers.</p>
+            </div>
+            <div class="tips-grid">
+                <div class="card-hex-glow tip-card">
+                    <h3 style="font-family: var(--font-head); font-size: 1.35rem; margin-bottom: 0.8rem;">Tip 1: Monitor Water Meter Leak Indicator Discs</h3>
+                    <p>Check your main municipal water meter once a month when no fixtures are running. If the small triangular leak indicator dial rotates even slowly, water is actively escaping somewhere in your supply system.</p>
+                </div>
+                <div class="card-hex-glow tip-card">
+                    <h3 style="font-family: var(--font-head); font-size: 1.35rem; margin-bottom: 0.8rem;">Tip 2: Install Whole-Home Pressure Regulator Valves (PRV)</h3>
+                    <p>Ensure incoming municipal static pressure is calibrated between 55 and 65 PSI. Pressure spikes above 80 PSI accelerate copper pipe fatigue beneath concrete slabs and rupture fitting joints.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. USER FEEDBACK & TESTIMONIALS SHOWCASE -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <span class="tech-pill">Community Feedback</span>
+                <h2>Trusted by SWFL Homeowners & Contractors</h2>
+                <p>Read how our structural leak technical reports have protected local properties from foundation damage.</p>
+            </div>
+            <div class="testi-grid">
+                <div class="card-hex-glow">
+                    <p>"The thermal imaging diagnostic advice in this guide helped us pinpoint a hot water slab leak under our kitchen tile in Bonita Springs. An overhead PEX reroute saved our Italian marble floors!"</p>
+                    <div class="testi-user">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Harrison B." class="testi-avatar">
+                        <div>
+                            <strong style="color: var(--text-title); font-family: var(--font-head);">Harrison B.</strong><br>
+                            <small style="color: var(--accent-indigo);">Bonita Bay Homeowner</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hex-glow">
+                    <p>"As a general contractor, I share this technical publication with clients undergoing renovation. Understanding the difference between jackhammering and rerouting empowers better decisions."</p>
+                    <div class="testi-user">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Evelyn M." class="testi-avatar">
+                        <div>
+                            <strong style="color: var(--text-title); font-family: var(--font-head);">Evelyn M.</strong><br>
+                            <small style="color: var(--accent-indigo);">SWFL General Contractor</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hex-glow">
+                    <p>"Outstanding clarity on sub-slab diagnostics. The acoustic scan overview explained exactly what to expect during our emergency repair. Highly recommended reading!"</p>
+                    <div class="testi-user">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Dominic C." class="testi-avatar">
+                        <div>
+                            <strong style="color: var(--text-title); font-family: var(--font-head);">Dominic C.</strong><br>
+                            <small style="color: var(--accent-indigo);">Pelican Landing Resident</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. HIGHLIGHTED RESOURCE BANNER -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="resource-banner">
+                <span class="tech-pill" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);">Digital Resource</span>
+                <h2 style="font-size: 2.3rem; margin: 1rem 0; color: #fff;">Download the 2026 SWFL Foundation Preservation Guide</h2>
+                <p style="max-width: 660px; margin: 0 auto 2rem auto; color: var(--text-bright);">Access our complete digital manual featuring acoustic sensor placement diagrams, thermal imaging reading keys, and PEX reroute design templates.</p>
+                <a href="#consultation" class="btn btn-indigo">Request Digital Manual</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. FUNCTIONAL CONTACT / CONSULTATION FORM SECTION -->
+    <section class="section-padding" style="background: var(--bg-surface);" id="consultation">
+        <div class="container">
+            <div class="section-header">
+                <span class="tech-pill">Advisory Portal</span>
+                <h2>Request an Emergency Sub-Slab Leak Diagnostic Audit</h2>
+                <p>Connect with our technical advisory team or schedule an immediate acoustic and thermal leak inspection.</p>
+            </div>
+            <div class="form-wrap">
+                <form onsubmit="event.preventDefault(); alert('Your emergency slab leak diagnostic request has been submitted to SWFL Builder & Renovator.');">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-input" required>
+                            <option value="">Select Primary Concern</option>
+                            <option value="warm">Warm Spots on Tile or Floor</option>
+                            <option value="sound">Running Water Sound / Meter Spinning</option>
+                            <option value="bill">Unexplained High Water Bill</option>
+                            <option value="damp">Damp Flooring or Baseboard Moisture</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" rows="5" placeholder="Specify property age, flooring type, or observed leak symptoms..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-indigo" style="width: 100%;">Submit Diagnostic Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. COMPREHENSIVE FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">SWFL Builder & Renovator</div>
+                    <p>An independent digital research publication dedicated to coastal building engineering, structural foundation safety, and property preservation across Southwest Florida.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-title); font-family: var(--font-code); font-size: 0.9rem; margin-bottom: 1.2rem; text-transform: uppercase;">Navigation</h4>
+                    <ul style="list-style: none; line-height: 2.2;">
+                        <li><a href="#mission">Editorial Mission</a></li>
+                        <li><a href="#article">Featured Report</a></li>
+                        <li><a href="#features">Diagnostic Pillars</a></li>
+                        <li><a href="#architecture">Response Protocol</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-title); font-family: var(--font-code); font-size: 0.9rem; margin-bottom: 1.2rem; text-transform: uppercase;">Legal & Metadata</h4>
+                    <ul style="list-style: none; line-height: 2.2;">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Editorial Use</a></li>
+                        <li><a href="#">Subdomain: swflbuilderrenovator</a></li>
+                        <li><a href="#">2026 Edition Archives</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SWFL Builder & Renovator. All rights reserved. Registered Digital Publication.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Vanilla JS for FAQ Accordion -->
+    <script>
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.parentElement;
+                const isOpen = card.classList.contains('open');
+                
+                // Close all open cards
+                document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+                
+                // Toggle clicked card
+                if (!isOpen) {
+                    card.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
