@@ -4,10 +4,8 @@ site_author: "SWFL Builder & Renovator"
 
 docs_dir: docs
 
-# Static HTML/CSS directly pass karne ke liye
-use_directory_urls: false
-
 theme:
-  name: null
+  name: mkdocs
+  custom_dir: docs
 
-plugins: []
+use_directory_urls: false
